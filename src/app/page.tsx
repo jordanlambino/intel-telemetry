@@ -12,14 +12,18 @@ import Intro from "./components/intro"
 import ProgressBar from "../features/progressbar"
 import Contact from "./components/contact"
 
+import TableOfContents from "./components/tableofcontents"
+
 export default function Home() {
   return (
-    <main className="snap-y snap-proximity scroll-smooth">
+    <main className="ml-40 scroll-smooth">
       <ProgressBar/>
       <Title
         title="Balancing Privacy and Utility: Differentially Private Synthetic Data Generation for Intel Telemetry"
         subtitle=""
       />
+
+      <TableOfContents/>
       <Intro/>
       <Overview/>
       <Results/>

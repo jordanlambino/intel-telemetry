@@ -7,6 +7,7 @@ type TitleProps = {
 
 export default function Title({ title, subtitle }: TitleProps) {
     return (
+        <section id="title">
         <header className="snap-start bg-slate-700 text-white py-20 text-center">
             <h1 className="text-4xl font-bold max-w-4xl mx-auto px-8">
                 {title}
@@ -44,5 +45,6 @@ export default function Title({ title, subtitle }: TitleProps) {
                 />
             </section>
         </header>
+        </section>
     )
 }
