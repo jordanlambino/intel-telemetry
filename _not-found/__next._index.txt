@@ -2,4 +2,4 @@
 2:I[7121,[],""]
 3:I[4581,[],""]
 :HL["/intel-telemetry/_next/static/css/fdaa902dde2c30d6.css","style"]
-0:{"buildId":"eQHDGIuoysmmxMTA0UwrK","rsc":["$","$1","c",{"children":[[["$","link","0",{"rel":"stylesheet","href":"/intel-telemetry/_next/static/css/fdaa902dde2c30d6.css","precedence":"next"}]],["$","html",null,{"lang":"en","children":["$","body",null,{"className":"__className_ee64db","children":["$","$L2",null,{"parallelRouterKey":"children","template":["$","$L3",null,{}]}]}]}]]}],"loading":null,"isPartial":false}
+0:{"buildId":"bcgnB0t6_JkW2cZVXICa1","rsc":["$","$1","c",{"children":[[["$","link","0",{"rel":"stylesheet","href":"/intel-telemetry/_next/static/css/fdaa902dde2c30d6.css","precedence":"next"}]],["$","html",null,{"lang":"en","children":["$","body",null,{"className":"__className_ee64db","children":["$","$L2",null,{"parallelRouterKey":"children","template":["$","$L3",null,{}]}]}]}]]}],"loading":null,"isPartial":false}
