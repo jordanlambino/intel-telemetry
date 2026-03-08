@@ -6,29 +6,27 @@ export default function Overview() {
         <section id="overview">
             <Section title="Project Overview">
                 <div className="space-y-8">
-                    <p>
-                        Project overview -- high level, include clear problem statement
-                    </p>
-
-                    <p>
-                        In this work we apply differentially private query release to Intel telemetry: we answer a fixed set of analytical queries by adding calibrated noise to their outputs after bounding each device’s contribution via clipping, and we evaluate two standard mechanisms (Laplace and Analytic Gaussian) on mini and full databases.
-                    </p>
-
                     <h3 className="text-2xl md:text-2xl font-semibold text-slate-800 mb-2">
-                        Telemetry Data
+                        The Problem: Telemetry Analytics vs. Privacy
                     </h3>
                     <p>
-                        Intel collects telemetry data from Windows client machines via the Driver and Client Applications (DCA) systems. The complete dataset contains information across 22 tables, linked by a unique device identifier (GUID). These tables include information about:
+                        Modern hardware and software systems collect telemetry data to analyze device usage in real world environments. The data are stored in logs which reveal useful insights for analyzing and improving product performance, reliability, and feature adoption. However, these datasets often contain detailed, device-specific information that can induce privacy risks, even when user “anonymity” is guaranteed.
                     </p>
-                    <ul style={{ paddingLeft: "40px", listStyleType: "square" }}>
-                        <li>Hardware characteristics</li>
-                        <li>Processor performance</li>
-                        <li>Battery usage</li>
-                        <li>Application activity</li>
-                        <li>Browsing behavior</li>
-                        <li>Network consumption</li>
-                        <li>Memory usage</li>
-                    </ul>
+
+                    <p>
+                        This project investigates how differential privacy can enable the release of telemetry aggregates or statistics while protecting individual privacy. We implement a differentially private query-release pipeline that introduces calibrated noise to aggregate queries while clipping each device’s contribution to the results.
+                    </p>
+                    <h3 className="text-2xl md:text-2xl font-semibold text-slate-800 mb-2">
+                        Telemetry Dataset
+                    </h3>
+                    <p>
+                        The dataset used in this study contains Intel telemetry logs collected from real-world devices. Each record is associated with a unique device identifier (GUID) and describes system events, such as battery usage, power consumption, browser activity, and hardware configuration. 
+                    </p>
+                        The raw telemetry data contains 23 source tables, which we transform into 22 reporting tables after pre-processing via SQL build scripts. These reporting tables simplify complex SQL joins and allow the execution of 12 benchmark analytical queries used for evaluation.
+                    <p>
+
+                    </p>
+                    
 
                     <p>
                         In our work, we create two DuckDB databases:
@@ -43,12 +41,12 @@ export default function Overview() {
                     </h3>
 
                     <p>
-                        In this project, we work with 12 benchmark queries which Intel's engineering teams use for actual analysis. These queries represent analytical questions which reveal information ranging from battery health by geography, battery health by CPU generation, common software trends, to most popular browser by country.
+                        As noted above, we work with 12 benchmark queries which Intel's engineering teams use for actual analysis. These queries represent analytical questions which reveal information ranging from battery health by geography, battery health by CPU generation, common software trends, to most popular browser by country. These queries provide a meaningful testbed for evaluating the effectiveness of differential privacy, along with finding an optimal balance between privacy and utility.
                     </p>
 
                     <Image
                         src="/intel-telemetry/query_table.png"
-                        alt="Query Categorization"
+                        alt="Query Table"
                         width={600}
                         height={600}
                     />
@@ -57,6 +55,25 @@ export default function Overview() {
                         alt="Query Categorization"
                         width={700}
                         height={700}
+                    />
+
+                    <h3 className="text-2xl md:text-2xl font-semibold text-slate-800 mb-2">
+                        Differential Privacy Pipeline
+                    </h3>
+                    <ul style={{ paddingLeft: "40px", listStyleType: "number" }}>
+                        <li><strong>Load the raw telemetry data</strong> into DuckDB. Run the build step to produce 22 reporting tables.</li>
+                        <li><strong>Run the 12 benchmark queries</strong> with per-GUID clipping in SQL to obtain the non-private baseline.</li>
+                        <li><strong>Run the Laplace and Analytic Gaussian mechanism</strong> at each &epsilon; in  ε ∈ {`{`}0.01, 0.05, 0.1, 0.5, 1.0, ∞{`}`} (with ∞ representing no-noise reference) for both baseline and advanced variants.</li>
+                        <li><strong>Compute utility scores</strong> by median relative error, total variation distance, and Spearman rank correlation.</li>
+                        <li>Evaluation computes <strong>per-query statistics</strong> and <strong>Laplace vs. Gaussian comparison</strong> across &epsilon;.</li>
+                        <li>Evaluation outputs <strong>privacy-utility tradeoff</strong> curves, pass rate, and Pareto frontier metrics.</li>
+                    </ul>
+                    <p>The flowchart below illustrates the complete pipeline for this study:</p>
+                    <Image
+                        src="/intel-telemetry/dp_pipeline.png"
+                        alt="DP Pipeline"
+                        width={800}
+                        height={1200}
                     />
                 </div>
             </Section>

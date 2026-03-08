@@ -1,9 +1,8 @@
 @import "tailwindcss";
-
 /*@import url('https://fonts.googleapis.com/css2?family=Syne:wght@400;600;700;800&family=IBM+Plex+Mono:wght@400;500;600&family=IBM+Plex+Sans:wght@300;400;500;600&display=swap');*/
 
 :root {
-  --bg: #0a0e1a;
+  --bg: #3c4050;
   --surface: #111827;
   --surface-2: #1e2a3a;
   --border: #1e3a5f;
@@ -103,4 +102,15 @@ h1, h2, h3 {
 /* Horizontal rule */
 hr {
   border-color: var(--border);
+}
+
+.image-row {
+  display: flex;
+  gap: 20px;
+  justify-content: center;
+}
+
+.image-row img {
+  width: 45%;
+  height: auto;
 }

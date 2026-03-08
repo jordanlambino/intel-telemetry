@@ -8,6 +8,7 @@ import Conclusion from "./components/conclusion"
 import Title from "./components/title"
 import Overview from "./components/overview"
 import Intro from "./components/intro"
+import FinalComments from "./components/footnote"
 
 import ProgressBar from "../features/progressbar"
 import Contact from "./components/contact"
@@ -21,10 +22,10 @@ export default function Home() {
       Tailwind test
     </div>
     */
-    <main className="ml-40 scroll-smooth">
+    <main className="ml-0 lg:ml-64 scroll-smooth">
       <ProgressBar/>
       <Title
-        title="Balancing Privacy and Utility: Differentially Private Synthetic Data Generation for Intel Telemetry"
+        title="Balancing Privacy and Utility: Query Release in Telemetry Data"
         subtitle=""
       />
 
@@ -34,6 +35,7 @@ export default function Home() {
       <Results/>
       <Methods/>
       <Discussion/>
+      
     </main>
     
   );
