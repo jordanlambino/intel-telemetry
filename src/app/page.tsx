@@ -16,6 +16,11 @@ import TableOfContents from "./components/tableofcontents"
 
 export default function Home() {
   return (
+    /*
+    <div className="text-red-400 text-6xl font-bold">
+      Tailwind test
+    </div>
+    */
     <main className="ml-40 scroll-smooth">
       <ProgressBar/>
       <Title
@@ -30,5 +35,6 @@ export default function Home() {
       <Methods/>
       <Discussion/>
     </main>
+    
   );
 }
