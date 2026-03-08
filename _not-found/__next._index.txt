@@ -2,4 +2,4 @@
 2:I[7121,[],""]
 3:I[4581,[],""]
 :HL["/intel-telemetry/_next/static/css/44ecd8fcee74781b.css","style"]
-0:{"buildId":"QjpKqKG1VnHlZccFWS5mX","rsc":["$","$1","c",{"children":[[["$","link","0",{"rel":"stylesheet","href":"/intel-telemetry/_next/static/css/44ecd8fcee74781b.css","precedence":"next"}]],["$","html",null,{"lang":"en","children":["$","body",null,{"className":"__className_ee64db","children":["$","$L2",null,{"parallelRouterKey":"children","template":["$","$L3",null,{}]}]}]}]]}],"loading":null,"isPartial":false}
+0:{"buildId":"nJV2rmIrIoIh_UL3FEFQO","rsc":["$","$1","c",{"children":[[["$","link","0",{"rel":"stylesheet","href":"/intel-telemetry/_next/static/css/44ecd8fcee74781b.css","precedence":"next"}]],["$","html",null,{"lang":"en","children":["$","body",null,{"className":"__className_ee64db","children":["$","$L2",null,{"parallelRouterKey":"children","template":["$","$L3",null,{}]}]}]}]]}],"loading":null,"isPartial":false}
